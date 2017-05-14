@@ -51,6 +51,7 @@ public:
 	    if (cur->next->data == val) {
 		return true;
 	    }
+	    cur = cur->next;
 	}
 	return false;
     }
@@ -60,27 +61,35 @@ int main () {
     /*
      * For testing the linked list
      */
-    // std::cout << "testing the linked list\n";
+    // std::cout << "testing the linked list" << std::endl;
     // IntLinkedList test;
     // test.addNode(1);
     // test.addNode(2);
     // test.addNode(3);
     // test.addNode(4);
     // test.addNode(5);
-    // std::cout << "added nodes 1-5\n";
+    // std::cout << "added nodes 1-5" << std::endl;
     // IntNode * cur = test.head->next;
     // while (cur) {
-    // 	std::cout << cur->data << "\n";
+    // 	std::cout << cur->data << std::endl;
     // 	cur = cur->next;
     // }
-    // std::cout << "printed the nodes\n";
+    // std::cout << "printed the nodes" << std::endl;
     // test.deleteNode(3);
-    // std::cout << "deleted node 3\n";
+    // std::cout << "deleted node 3" << std::endl;
     // cur = test.head->next;
     // while (cur) {
-    // 	std::cout << cur->data << "\n";
+    // 	std::cout << cur->data << std::endl;
     // 	cur = cur->next;
     // }
-    // std::cout << "all done!\n";
+    // for (int i = 0; i < 8; i++) {
+    // 	if (test.contains(i)) {
+    // 	    std::cout << "contains " << i << std::endl;
+    // 	}
+    // 	else {
+    // 	    std::cout << "does not contain " << i << std::endl;
+    // 	}
+    // }
+    // std::cout << "all done!" << std::endl;
     return 0;
 }
