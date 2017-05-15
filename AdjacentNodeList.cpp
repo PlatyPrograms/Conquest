@@ -1,27 +1,27 @@
 #include <iostream>
 
-typedef struct IntNode {
+typedef struct Node {
     int data;
-    IntNode * next;
-} IntNode;
+    Node * next;
+} Node;
 
-class IntLinkedList {
+class AdjacentNodeList {
 public:
-    IntNode * head;
+    Node * head;
     /*
      * Constructor
      */
-    IntLinkedList() {
+    AdjacentNodeList() {
 	head->next = NULL;
     }
     /* 
      * Adds a node with value val to the linked list
      */
     void addNode(int val) {
-	IntNode * toAdd = new IntNode;
+	Node * toAdd = new Node;
 	toAdd->data = val;
 	toAdd->next = NULL;
-	IntNode * cur = head;
+	Node * cur = head;
 	while (cur->next) {
 	    cur = cur->next;
 	}
@@ -32,7 +32,7 @@ public:
      * Deletes the first node with value val it finds
      */
     void deleteNode(int val) {
-	IntNode * cur = head;
+	Node * cur = head;
 	while (cur->next) {
 	    if (cur->next->data == val) {
 		cur->next = cur->next->next;
@@ -46,7 +46,7 @@ public:
      * Returns true if the linked list contains a node with value val
      */
     bool contains(int val){
-	IntNode * cur = head;
+	Node * cur = head;
 	while (cur->next) {
 	    if (cur->next->data == val) {
 		return true;
@@ -62,14 +62,14 @@ int main () {
      * For testing the linked list
      */
     // std::cout << "testing the linked list" << std::endl;
-    // IntLinkedList test;
+    // AdjacentNodeList test;
     // test.addNode(1);
     // test.addNode(2);
     // test.addNode(3);
     // test.addNode(4);
     // test.addNode(5);
     // std::cout << "added nodes 1-5" << std::endl;
-    // IntNode * cur = test.head->next;
+    // Node * cur = test.head->next;
     // while (cur) {
     // 	std::cout << cur->data << std::endl;
     // 	cur = cur->next;
