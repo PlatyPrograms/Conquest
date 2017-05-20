@@ -2,16 +2,20 @@ class Node {
 public:
     Piece * piece;
     AdjacentNodeList * adjacents;
+    AdjacentNodeList * bridged;
     int index;
     /*
      * takes current piece, array of adjacent nodes, and index; initializes a new node
      * based on those parameters
      * NOTE: could also take and AdjacentNodeList and handle its creation in config parse
      */
-    Node(Piece p, int[] a, int i) { // 1
+    Node(Piece p, int[] a, int[] b, int i) { // 1
 	piece = p;
-	for (int adjIndex : a) {
-	    adjacents.add(adjIndex);
+	for (int adj : a) {
+	    adjacents.add(adj);
+	}
+	for (int brg : b) {
+	    bridged.add(brg);
 	}
 	index = i;
     }

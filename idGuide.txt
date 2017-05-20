@@ -1,0 +1,28 @@
+-| PlatyPrograms' Comprehensive Guide to Piece and Node IDs |-
+
+I've tried to maintain some order here, because it seems useful. Pieces 0-9 are all basic land units; that is, they come default with your setup (require no building). 10-19 are built land units (e.g. trebuchets, chariots). 20-29 are basic water units, and 30-39 are built water units.
+
+Nodes are done somewhat more haphazardly; there are fewer types, so I've just ordered them based on commonness. Ports and field entrances/exits are defined implicitly; if there is land connected to water, it's a port and that's handled in canMove (same for fields and fortresses)
+
+Additionally, the pieces are ordered in something approaching power level, with higher pieces being generally stronger. Of course, it's impossible to rate them objectively, and once players start defining pieces it'll get even more muddied, but it's nice to at least start from something resembling order.
+
+Pieces
+------
+00: Soldier
+01: Camel
+02: Elephant
+
+10: Chariot
+11: Trebuchet
+12: Siege Engine
+
+20: Ship
+21: Galleon
+
+
+Nodes
+-----
+00: Land
+01: Field
+02: Water
+03: Fortress
