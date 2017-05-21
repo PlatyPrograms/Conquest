@@ -4,6 +4,7 @@ public:
     AdjacentNodeList * adjacents;
     AdjacentNodeList * bridged;
     int index;
+    
     /*
      * takes current piece, array of adjacent nodes, and index; initializes a new node
      * based on those parameters
@@ -19,18 +20,21 @@ public:
 	}
 	index = i;
     }
+    
     /*
      * checks if there is a piece on the node already
      */
     boolean isEmpty() { // 1
 	return (piece == NULL);
     }
+    
     /*
      * adds a piece to the node; useful only for initialization
      */
     void addPiece(Piece toAdd) { // 1
 	piece = toAdd;
     }
+    
     /*
      * deletes the current piece
      */
@@ -38,6 +42,7 @@ public:
 	delete piece;
 	piece = NULL;
     }
+    
     /*
      * pops the current piece off of the node, returns it
      * will return NULL if piece is NULL
@@ -48,6 +53,7 @@ public:
 	piece = NULL;
 	return ret;
     }
+    
     /*
      * checks if the node with index toTest is adjacent to the current node
      */
