@@ -11,9 +11,30 @@ public:
      * returns true if embarcation succeeds
      */
     boolean embarkPiece(Node * source) { // 0
-	if (toEmbark->curNode->isAdjacent(curNode->index) && embarked.size() < maxEmbark) {
-	    toEmbark.curNode->
+	if (source->isEmpty() || embarked.size() >= maxEmbark ||
+	    !source->isAdjacent(curNode->index)) {
+	    return false;
+	}
+	Piece * toEmbark = source->getPiece();
+	embarked.push_back(toEmbark);
+	return true;
     }
-    boolean disembarkPiece(Piece * toDisembark, Node * destination) { // 0
+
+    /*
+     * disembarks a piece of type toDisembark
+     */
+    boolean disembarkPiece(int toDisembark, Node * destination) { // 0
+	Piece * disembarking = NULL;
+	for (Piece * p : embarked) {
+	    if (p->type == toDisembark) {
+		disembarking = p;
+		break;
+	    }
+	}
+	if (!disembarking || !disembarking.canMove(destination)) {
+	    return false;
+	}
+	embarked.remove(disembarking);
+	destination.addPiece(disembarking);
     }
 };

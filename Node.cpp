@@ -25,13 +25,13 @@ public:
      * checks if there is a piece on the node already
      */
     boolean isEmpty() { // 1
-	return (piece == NULL);
+	return (!piece);
     }
     
     /*
-     * adds a piece to the node; useful only for initialization
+     * adds a piece to the node
      */
-    void addPiece(Piece toAdd) { // 1
+    void addPiece(Piece * toAdd) { // 1
 	piece = toAdd;
     }
     
@@ -40,7 +40,6 @@ public:
      */
     void killPiece() { // 1
 	delete piece;
-	piece = NULL;
     }
     
     /*
@@ -50,7 +49,7 @@ public:
      */
     Piece * getPiece() { // 1
 	Piece * ret = piece;
-	piece = NULL;
+	delete piece;
 	return ret;
     }
     
